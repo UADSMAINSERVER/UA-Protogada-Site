@@ -1,151 +1,78 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>United Arctic</title>
-   <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>United Arctic Sanctum</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
-<body class="light-mode">
+<body>
 
-  <!-- HEADER -->
+  <!-- 🔐 Login Modal -->
+  <div id="loginModal" class="modal hidden">
+    <div class="modal-content">
+      <span class="close-btn" id="closeModal">&times;</span>
+      <h2>Enter the Sanctum</h2>
+      <form id="loginForm">
+        <input type="text" placeholder="Username" required />
+        <input type="password" placeholder="Password" required />
+        <button type="submit">Log In</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- 🧊 Header -->
   <header>
-    <div class="logo-container">
-      <a href="index.html">
-        <img src="public/icons/Main_logo.png" alt="UA Logo" class="main-logo">
-      </a>
-    </div>
-
-    <div class="mode-toggle">
-      <img id="mode-icon" src="public/icons/polar.png" alt="Mode Toggle">
-    </div>
-
+    <h1>United Arctic</h1>
     <nav class="main-nav">
       <ul>
-        <li><a href="topic1.html">Topic 1</a></li>
-        <li><a href="topic2.html">Topic 2</a></li>
-        <li><a href="topic3.html">Topic 3</a></li>
-        <li><a href="topic4.html">Topic 4</a></li>
-        <li><a href="topic5.html">Topic 5</a></li>
-        <li><a href="topic6.html">Topic 6</a></li>
-        <li><a href="topic7.html">Topic 7</a></li>
-        <li><a href="topic8.html">Topic 8</a></li>
+        <li><a href="#topics">Topics</a></li>
+        <li><a href="#complex">Complex</a></li>
+        <li><a href="#codex">Codex</a></li>
+        <li><button id="loginBtn">Login</button></li>
       </ul>
     </nav>
-
-    <div class="login-container">
-      <button id="login-btn">☰ Login</button>
-    </div>
   </header>
 
-  <!-- LOGIN MODAL -->
-  <div id="login-modal" class="modal hidden">
-    <div class="modal-content">
-      <h2>Account</h2>
-      <label>
-        Username<br>
-        <input type="text" id="username">
-      </label>
-      <label>
-        Password<br>
-        <input type="password" id="password">
-      </label>
-      <div class="modal-actions">
-        <button id="login-submit">Login</button>
-        <button id="signup-submit">Sign Me Up</button>
+  <!-- 🧱 Main Container -->
+  <main class="container">
+
+    <!-- 📚 Topics Grid -->
+    <section id="topics">
+      <h2>More Topics</h2>
+      <div class="topics-grid">
+        <div class="topic-card">Hosting Rituals</div>
+        <div class="topic-card">Faction Politics</div>
+        <div class="topic-card">Minecraft Biomes</div>
+        <div class="topic-card">Proxy Maneuvers</div>
       </div>
-      <button class="modal-close" id="modal-close">&times;</button>
-    </div>
-  </div>
+    </section>
 
-  <!-- SEARCH BAR -->
-  <div class="search-container">
-    <img src="public/icons/pungin2.png" alt="" class="search-icon">
-    <input type="text" placeholder="Search…">
-  </div>
-
-  <!-- HERO IMAGE -->
-  <section class="hero">
-    <img src="public/photos/Arctic.png" alt="Arctic Icebergs">
-  </section>
-
-  <!-- CONTACTS -->
-  <section class="contacts">
-    <h3>Contacts</h3>
-    <ul>
-      <li>Discord: your-server#1234</li>
-      <li>WhatsApp: +1 234 567 8901</li>
-      <li>Teams: ua-team@unitedarctic.com</li>
-      <li>Email: contact@unitedarctic.com</li>
-    </ul>
-  </section>
-
-  <!-- MORE TOPICS (14) -->
-  <section class="more-topics">
-    <h3>More Topics</h3>
-    <div class="topics-grid">
-      <!-- Repeat 14× -->
-      <div class="topic-item">
-        <div class="topic-logo"><!-- placeholder for your icon --></div>
-        <a href="more1.html">More Topic 1</a>
+    <!-- 🧠 Complex Grid -->
+    <section id="complex">
+      <h2>Complex Topics</h2>
+      <div class="complex-grid">
+        <div class="complex-card">UA Node-01 Profit Arc</div>
+        <div class="complex-card">Shadowfall Descent</div>
+        <div class="complex-card">Protogada Math Rituals</div>
+        <div class="complex-card">Flipshock Classroom Wins</div>
       </div>
-      <!-- … up to More Topic 14 -->
-    </div>
-  </section>
+    </section>
 
-  <!-- SILLY IDEAS -->
-  <section class="silly-ideas">
-    <h3>Silly Ideas</h3>
-    <ul>
-      <li>Idea A: build an igloo-shaped web server</li>
-      <li>Idea B: host podcasts under ice</li>
-      <li>Idea C: code in thermal gloves</li>
-    </ul>
-  </section>
+    <!-- 📖 Codex Entry -->
+    <section id="codex">
+      <h2>Codex Entry</h2>
+      <p>Every pivot, patch, and parental pitch is logged here. The legend grows.</p>
+    </section>
 
-  <!-- MESSAGE CAROUSEL -->
-  <section class="messages">
-    <h3>Messages from Agents</h3>
-    <div id="message-carousel" class="carousel"></div>
-    <form id="message-form">
-      <input type="text" placeholder="Send a message…" required>
-      <button type="submit">Send</button>
-    </form>
-  </section>
+  </main>
 
-  <!-- COMPLEX TOPICS -->
-  <section class="complex-topics">
-    <h3>Deep Dives</h3>
-    <div class="complex-grid">
-      <div class="complex-item">
-        <h4>Complex Topic 1</h4>
-        <p class="update-date">Updated: 2025-09-01</p>
-        <p>Short description…</p>
-      </div>
-      <div class="complex-item">
-        <h4>Complex Topic 2</h4>
-        <p class="update-date">Updated: 2025-08-20</p>
-        <p>Short description…</p>
-      </div>
-      <div class="complex-item">
-        <h4>Complex Topic 3</h4>
-        <p class="update-date">Updated: 2025-07-15</p>
-        <p>Short description…</p>
-      </div>
-      <div class="complex-item">
-        <h4>Complex Topic 4</h4>
-        <p class="update-date">Updated: 2025-06-30</p>
-        <p>Short description…</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- FOOTER -->
+  <!-- 🧊 Footer -->
   <footer>
-    <div class="site-info">
-      <p>United Arctic • Mythic learning portal</p>
-      <p>© 2025 United Arctic. All rights reserved.</p>
-    </div>
+    <p>&copy; 2025 United Arctic. All lore preserved.</p>
   </footer>
-<script src="script.js"></script>
+
+  <!-- 🔮 Scripts -->
+  <script src="script.js"></script>
 </body>
 </html>
