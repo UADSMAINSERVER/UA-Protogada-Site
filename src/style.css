@@ -1,6 +1,6 @@
-/* === UA Sanctum Stylebind v1.0 === */
+/* === UA Stylebind v1.0 — Frost & Flame === */
 
-/* Reset & Base */
+/* Reset */
 * {
   margin: 0;
   padding: 0;
@@ -13,51 +13,43 @@ html {
 }
 
 :root {
-  --bg-light: #f9f9f9;
-  --text-light: #1a1a1a;
-  --bg-dark: #0f0f0f;
-  --text-dark: #f0f0f0;
-  --accent-light: #0077cc;
-  --accent-dark: #66ccff;
-  --border-light: #ddd;
-  --border-dark: #333;
+  --light-bg: #f9f9f9;
+  --light-text: #1a1a1a;
+  --light-accent: #0077cc;
+  --light-border: #ddd;
+
+  --dark-bg: #0f0f0f;
+  --dark-text: #f0f0f0;
+  --dark-accent: #66ccff;
+  --dark-border: #333;
 }
 
 /* Theme Switching */
-body {
-  background-color: var(--bg-light);
-  color: var(--text-light);
-  transition: background-color 0.3s ease, color 0.3s ease;
+body.light-mode {
+  background-color: var(--light-bg);
+  color: var(--light-text);
 }
 
-@media (prefers-color-scheme: dark) {
-  body {
-    background-color: var(--bg-dark);
-    color: var(--text-dark);
-  }
-
-  nav, .container, footer {
-    border-color: var(--border-dark);
-    background-color: rgba(255, 255, 255, 0.05);
-  }
-
-  a, h1, h2, h3 {
-    color: var(--accent-dark);
-  }
-
-  button {
-    background-color: var(--accent-dark);
-    color: var(--bg-dark);
-  }
+body.dark-mode {
+  background-color: var(--dark-bg);
+  color: var(--dark-text);
 }
 
-/* Navigation Bar */
-nav {
+a {
+  color: inherit;
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+
+/* HEADER */
+header {
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
   padding: 1rem 2rem;
-  border-bottom: 1px solid var(--border-light);
+  border-bottom: 1px solid var(--light-border);
   background-color: rgba(255, 255, 255, 0.8);
   backdrop-filter: blur(6px);
   position: sticky;
@@ -65,115 +57,255 @@ nav {
   z-index: 100;
 }
 
-nav a {
-  margin: 0 0.5rem;
-  color: var(--accent-light);
-  text-decoration: none;
-  font-weight: bold;
+body.dark-mode header {
+  background-color: rgba(0, 0, 0, 0.6);
+  border-bottom: 1px solid var(--dark-border);
 }
 
-nav a:hover {
-  text-decoration: underline;
+.logo-container img {
+  height: 40px;
 }
 
-/* Logo & Search */
-.logo {
-  font-size: 1.5rem;
-  font-weight: bold;
+.mode-toggle img {
+  height: 32px;
+  cursor: pointer;
 }
 
-.search-bar {
+.main-nav ul {
   display: flex;
-  gap: 0.5rem;
+  gap: 1rem;
+  list-style: none;
 }
 
-.search-bar input {
+.main-nav li a {
+  font-weight: bold;
+  color: var(--light-accent);
+}
+
+body.dark-mode .main-nav li a {
+  color: var(--dark-accent);
+}
+
+/* LOGIN BUTTON */
+.login-container {
+  margin-left: auto;
+}
+#login-btn {
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+/* LOGIN MODAL */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(15, 15, 15, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hidden {
+  display: none;
+}
+
+.modal-content {
+  background-color: var(--light-bg);
+  color: var(--light-text);
+  padding: 2rem;
+  border-radius: 8px;
+  width: 300px;
+  position: relative;
+}
+
+body.dark-mode .modal-content {
+  background-color: var(--dark-bg);
+  color: var(--dark-text);
+}
+
+.modal-content input {
+  width: 100%;
   padding: 0.5rem;
-  border: 1px solid var(--border-light);
+  margin-top: 0.25rem;
+  margin-bottom: 1rem;
+  border: 1px solid var(--light-border);
   border-radius: 4px;
+  background-color: transparent;
+  color: inherit;
 }
 
-.search-bar button {
+body.dark-mode .modal-content input {
+  border: 1px solid var(--dark-border);
+}
+
+.modal-actions {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.modal-actions button {
   padding: 0.5rem 1rem;
-  background-color: var(--accent-light);
+  background-color: var(--light-accent);
   color: white;
   border: none;
   border-radius: 4px;
   cursor: pointer;
 }
 
-/* Main Content */
-.container {
-  max-width: 900px;
-  margin: 2rem auto;
-  padding: 2rem;
-  border: 1px solid var(--border-light);
-  border-radius: 8px;
-  background-color: rgba(255, 255, 255, 0.6);
+body.dark-mode .modal-actions button {
+  background-color: var(--dark-accent);
 }
 
-h2 {
+.modal-close {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+/* SEARCH BAR */
+.search-container {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1rem 2rem;
+}
+
+.search-icon {
+  height: 24px;
+}
+
+.search-container input {
+  flex: 1;
+  padding: 0.5rem;
+  border: 1px solid var(--light-border);
+  border-radius: 4px;
+  background-color: transparent;
+  color: inherit;
+}
+
+body.dark-mode .search-container input {
+  border: 1px solid var(--dark-border);
+}
+
+/* HERO IMAGE */
+.hero img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* SECTION STYLING */
+section {
+  padding: 2rem;
+  border-bottom: 1px solid var(--light-border);
+}
+
+body.dark-mode section {
+  border-bottom: 1px solid var(--dark-border);
+}
+
+h3 {
   margin-bottom: 1rem;
-  color: var(--accent-light);
+  color: var(--light-accent);
+}
+
+body.dark-mode h3 {
+  color: var(--dark-accent);
 }
 
 ul {
   list-style-type: disc;
   margin-left: 1.5rem;
-  margin-bottom: 2rem;
 }
 
-li {
-  margin-bottom: 0.5rem;
+/* TOPICS GRID */
+.topics-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 1rem;
 }
 
-/* Agent Messages */
-.agent-message {
-  background-color: rgba(0, 119, 204, 0.1);
+.topic-item {
   padding: 1rem;
-  border-left: 4px solid var(--accent-light);
-  margin-bottom: 1rem;
-  border-radius: 4px;
+  border: 1px solid var(--light-border);
+  border-radius: 6px;
+  text-align: center;
 }
 
-/* Buttons */
-button {
-  background-color: var(--accent-light);
+body.dark-mode .topic-item {
+  border: 1px solid var(--dark-border);
+}
+
+/* MESSAGES */
+.messages form {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.messages input {
+  flex: 1;
+  padding: 0.5rem;
+  border: 1px solid var(--light-border);
+  border-radius: 4px;
+  background-color: transparent;
+  color: inherit;
+}
+
+.messages button {
+  padding: 0.5rem 1rem;
+  background-color: var(--light-accent);
   color: white;
   border: none;
-  padding: 0.75rem 1.5rem;
   border-radius: 4px;
   cursor: pointer;
-  transition: background-color 0.3s ease;
 }
 
-button:hover {
-  background-color: #005fa3;
+body.dark-mode .messages button {
+  background-color: var(--dark-accent);
 }
 
-/* Footer */
+/* COMPLEX TOPICS */
+.complex-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+}
+
+.complex-item {
+  padding: 1rem;
+  border: 1px solid var(--light-border);
+  border-radius: 6px;
+}
+
+body.dark-mode .complex-item {
+  border: 1px solid var(--dark-border);
+}
+
+.update-date {
+  font-size: 0.8rem;
+  color: gray;
+}
+
+/* FOOTER */
 footer {
   text-align: center;
   padding: 1rem;
   font-size: 0.875rem;
-  color: var(--border-light);
-  border-top: 1px solid var(--border-light);
-  margin-top: 2rem;
+  color: gray;
+  border-top: 1px solid var(--light-border);
 }
 
-/* Responsive */
-@media (max-width: 768px) {
-  nav {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .search-bar {
-    flex-direction: column;
-    width: 100%;
-  }
-
-  .container {
-    padding: 1rem;
-  }
+body.dark-mode footer {
+  border-top: 1px solid var(--dark-border);
 }
