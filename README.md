@@ -1,20 +1,26 @@
 # ❄️ United Arctic Protogada
 
-Welcome to the mythic sanctum of **United Arctic Protogada**—a faction-neutral portal built to empower students, creators, and lorekeepers through ritualized knowledge, ultra-affordable hosting, and symbolic design.
+**UA Protogada** is a mythic learning portal built by United Arctic to empower students and creators through ultra-affordable hosting, symbolic design, and ritualized knowledge.
 
-This site is inspired by the clarity and structure of [MathIsFun.com](https://mathisfun.com), but reimagined through the lens of UA’s seasonal arcs, factional politics, and creative autonomy.
+This site uses **simple styles** and **content-first layouts** to deliver tools, guides, and lore without distraction. No animations. No clutter. Just frost-coded clarity.
 
 ---
 
-## 🧭 What Is Protogada?
+## 📚 What You'll Find
 
-Protogada is the **Codex Interface** of United Arctic—a mythic agency that transforms technical knowledge, hosting rituals, and creative builds into living lore. It’s not just a website. It’s a gateway to:
+- **Codex Entries**: Logs of hosting rituals, hardware relics, and seasonal arcs  
+- **Student Tools**: Hosting guides, profit plans, and creative starter packs  
+- **Faction Tabs**: Explore UA’s mythic zones—Sanctum Builds, Forbidden Lore, Shrine Archives  
+- **UA Philosophy**: Empowerment through autonomy, annotation, and symbolic design
 
-- Hosting guides and profit plans for students
-- Lore entries from UA’s seasonal campaigns
-- Factional tabs and symbolic navigation
-- Creative tools and mythic metaphors
-- Memorials to fallen players and forgotten builds
+---
+
+## ⚙️ Tech Stack
+
+- **Frontend**: HTML + CSS (simple, clean, no frameworks)  
+- **Hosting**: [Render](https://render.com) Static Site  
+- **Version Control**: GitHub  
+- **Design Style**: UA Original—flat, faction-coded, lore-driven
 
 ---
 
