@@ -66,7 +66,7 @@ UA Protogada is open-source, but **UA lore, sanctum rituals, and factional memor
 ## 🧊 Contact
 
 For alliance requests, hosting inquiries, or lore submissions:  
-📬 **slowkit45@ua-sanctum.net** *(placeholder email)*  
+📬 Building one... *Nothing!*  
 🧊 Codex updates logged via GitHub Issues
 
 ---
