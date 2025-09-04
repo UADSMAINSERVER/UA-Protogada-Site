@@ -1,311 +1,229 @@
-/* === UA Stylebind v1.0 — Frost & Flame === */
+/* RESET & BASE */
 
-/* Reset */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-html {
-  font-size: 16px;
-  font-family: 'Segoe UI', sans-serif;
-}
-
-:root {
-  --light-bg: #f9f9f9;
-  --light-text: #1a1a1a;
-  --light-accent: #0077cc;
-  --light-border: #ddd;
-
-  --dark-bg: #0f0f0f;
-  --dark-text: #f0f0f0;
-  --dark-accent: #66ccff;
-  --dark-border: #333;
-}
-
-/* Theme Switching */
 body.light-mode {
-  background-color: var(--light-bg);
-  color: var(--light-text);
+  background: #fafafa;
+  color: #111;
 }
 
 body.dark-mode {
-  background-color: var(--dark-bg);
-  color: var(--dark-text);
-}
-
-a {
-  color: inherit;
-  text-decoration: none;
-}
-a:hover {
-  text-decoration: underline;
+  background: #111;
+  color: #eee;
 }
 
 /* HEADER */
+
 header {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  padding: 1rem 2rem;
-  border-bottom: 1px solid var(--light-border);
-  background-color: rgba(255, 255, 255, 0.8);
-  backdrop-filter: blur(6px);
-  position: sticky;
-  top: 0;
-  z-index: 100;
+  padding: 0.5rem 1rem;
+  background: inherit;
 }
 
-body.dark-mode header {
-  background-color: rgba(0, 0, 0, 0.6);
-  border-bottom: 1px solid var(--dark-border);
-}
-
-.logo-container img {
+.logo-container .main-logo {
   height: 40px;
 }
 
-.mode-toggle img {
-  height: 32px;
+.mode-toggle {
+  margin-left: 1rem;
   cursor: pointer;
 }
 
 .main-nav ul {
+  list-style: none;
   display: flex;
   gap: 1rem;
-  list-style: none;
+  margin-left: 2rem;
 }
 
-.main-nav li a {
-  font-weight: bold;
-  color: var(--light-accent);
+.main-nav a {
+  text-decoration: none;
+  color: inherit;
+  font-weight: 500;
 }
 
-body.dark-mode .main-nav li a {
-  color: var(--dark-accent);
-}
-
-/* LOGIN BUTTON */
 .login-container {
   margin-left: auto;
 }
+
 #login-btn {
-  background: none;
+  background: transparent;
   border: none;
-  font-size: 1.2rem;
+  font-size: 1rem;
   cursor: pointer;
+  color: inherit;
 }
 
-/* LOGIN MODAL */
+/* MODAL */
+
 .modal {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(15, 15, 15, 0.8);
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  background: rgba(0,0,0,0.5);
+  display: grid;
+  place-items: center;
 }
 
-.hidden {
+.modal.hidden {
   display: none;
 }
 
 .modal-content {
-  background-color: var(--light-bg);
-  color: var(--light-text);
-  padding: 2rem;
+  background: #fff;
+  padding: 1.5rem;
   border-radius: 8px;
   width: 300px;
   position: relative;
 }
 
 body.dark-mode .modal-content {
-  background-color: var(--dark-bg);
-  color: var(--dark-text);
+  background: #222;
+  color: #eee;
+}
+
+.modal-content label {
+  display: block;
+  margin-bottom: 0.75rem;
+  font-size: 0.9rem;
 }
 
 .modal-content input {
   width: 100%;
-  padding: 0.5rem;
-  margin-top: 0.25rem;
-  margin-bottom: 1rem;
-  border: 1px solid var(--light-border);
-  border-radius: 4px;
-  background-color: transparent;
-  color: inherit;
-}
-
-body.dark-mode .modal-content input {
-  border: 1px solid var(--dark-border);
+  padding: 0.4rem;
+  margin-top: 0.3rem;
 }
 
 .modal-actions {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 1rem;
-}
-
-.modal-actions button {
-  padding: 0.5rem 1rem;
-  background-color: var(--light-accent);
-  color: white;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-}
-
-body.dark-mode .modal-actions button {
-  background-color: var(--dark-accent);
-}
-
-.modal-close {
-  position: absolute;
-  top: 0.5rem;
-  right: 0.5rem;
-  background: none;
-  border: none;
-  font-size: 1.5rem;
-  cursor: pointer;
-}
-
-/* SEARCH BAR */
-.search-container {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  padding: 1rem 2rem;
-}
-
-.search-icon {
-  height: 24px;
-}
-
-.search-container input {
-  flex: 1;
-  padding: 0.5rem;
-  border: 1px solid var(--light-border);
-  border-radius: 4px;
-  background-color: transparent;
-  color: inherit;
-}
-
-body.dark-mode .search-container input {
-  border: 1px solid var(--dark-border);
-}
-
-/* HERO IMAGE */
-.hero img {
-  width: 100%;
-  height: auto;
-  display: block;
-}
-
-/* SECTION STYLING */
-section {
-  padding: 2rem;
-  border-bottom: 1px solid var(--light-border);
-}
-
-body.dark-mode section {
-  border-bottom: 1px solid var(--dark-border);
-}
-
-h3 {
-  margin-bottom: 1rem;
-  color: var(--light-accent);
-}
-
-body.dark-mode h3 {
-  color: var(--dark-accent);
-}
-
-ul {
-  list-style-type: disc;
-  margin-left: 1.5rem;
-}
-
-/* TOPICS GRID */
-.topics-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-  gap: 1rem;
-}
-
-.topic-item {
-  padding: 1rem;
-  border: 1px solid var(--light-border);
-  border-radius: 6px;
-  text-align: center;
-}
-
-body.dark-mode .topic-item {
-  border: 1px solid var(--dark-border);
-}
-
-/* MESSAGES */
-.messages form {
   display: flex;
   gap: 0.5rem;
   margin-top: 1rem;
 }
 
-.messages input {
+.modal-actions button {
   flex: 1;
   padding: 0.5rem;
-  border: 1px solid var(--light-border);
-  border-radius: 4px;
-  background-color: transparent;
-  color: inherit;
-}
-
-.messages button {
-  padding: 0.5rem 1rem;
-  background-color: var(--light-accent);
-  color: white;
-  border: none;
-  border-radius: 4px;
   cursor: pointer;
 }
 
-body.dark-mode .messages button {
-  background-color: var(--dark-accent);
+.modal-close {
+  position: absolute;
+  top: 0.4rem;
+  right: 0.6rem;
+  background: transparent;
+  border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
 }
 
-/* COMPLEX TOPICS */
-.complex-grid {
+/* SEARCH */
+
+.search-container {
+  margin: 1rem;
+  display: flex;
+  align-items: center;
+  border: 1px solid #888;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.search-container .search-icon {
+  width: 24px;
+  padding: 0.4rem;
+}
+
+.search-container input {
+  border: none;
+  flex: 1;
+  padding: 0.6rem;
+  font-size: 1rem;
+}
+
+/* HERO */
+
+.hero img {
+  width: 100%;
+  display: block;
+}
+
+/* SECTIONS */
+
+section {
+  padding: 1rem;
+}
+
+.contacts ul,
+.silly-ideas ul {
+  list-style: disc inside;
+  margin-top: 0.5rem;
+}
+
+.more-topics .topics-grid,
+.complex-topics .complex-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 1rem;
 }
 
+.more-topics .topics-grid {
+  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+}
+
+.complex-topics .complex-grid {
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+}
+
+.topic-item,
 .complex-item {
-  padding: 1rem;
-  border: 1px solid var(--light-border);
-  border-radius: 6px;
+  border: 1px solid #888;
+  padding: 0.5rem;
+  border-radius: 4px;
+  background: inherit;
 }
 
-body.dark-mode .complex-item {
-  border: 1px solid var(--dark-border);
+.topic-item a {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  margin-top: 0.4rem;
+  text-align: center;
 }
 
-.update-date {
-  font-size: 0.8rem;
-  color: gray;
+/* MESSAGES */
+
+.messages .carousel {
+  min-height: 2.5rem;
+  padding: 0.5rem;
+  border: 1px solid #888;
+  margin-bottom: 0.5rem;
+}
+
+#message-form {
+  display: flex;
+  gap: 0.5rem;
+}
+
+#message-form input {
+  flex: 1;
+  padding: 0.5rem;
+}
+
+#message-form button {
+  padding: 0.5rem 1rem;
+  cursor: pointer;
 }
 
 /* FOOTER */
+
 footer {
   text-align: center;
   padding: 1rem;
-  font-size: 0.875rem;
-  color: gray;
-  border-top: 1px solid var(--light-border);
-}
-
-body.dark-mode footer {
-  border-top: 1px solid var(--dark-border);
+  border-top: 1px solid #888;
+  margin-top: 2rem;
 }
