@@ -2,31 +2,152 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>United Arctic Protogada</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>United Arctic</title>
   <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body class="light-mode">
+
+  <!-- HEADER -->
   <header>
-    <h1>❄️ United Arctic Protogada</h1>
-    <nav>
+    <div class="logo-container">
+      <a href="index.html">
+        <img src="public/icons/Main_logo.png" alt="UA Logo" class="main-logo">
+      </a>
+    </div>
+
+    <div class="mode-toggle">
+      <img id="mode-icon" src="public/icons/polar.png" alt="Mode Toggle">
+    </div>
+
+    <nav class="main-nav">
       <ul>
-        <li><a href="#">Codex</a></li>
-        <li><a href="#">Sanctum Builds</a></li>
-        <li><a href="#">Student Tools</a></li>
-        <li><a href="#">Forbidden Lore</a></li>
+        <li><a href="topic1.html">Topic 1</a></li>
+        <li><a href="topic2.html">Topic 2</a></li>
+        <li><a href="topic3.html">Topic 3</a></li>
+        <li><a href="topic4.html">Topic 4</a></li>
+        <li><a href="topic5.html">Topic 5</a></li>
+        <li><a href="topic6.html">Topic 6</a></li>
+        <li><a href="topic7.html">Topic 7</a></li>
+        <li><a href="topic8.html">Topic 8</a></li>
       </ul>
     </nav>
+
+    <div class="login-container">
+      <button id="login-btn">☰ Login</button>
+    </div>
   </header>
 
-  <main>
-    <section>
-      <h2>Welcome to the Frost</h2>
-      <p>This portal empowers students and creators through hosting rituals, lore entries, and mythic builds.</p>
-    </section>
-  </main>
+  <!-- LOGIN MODAL -->
+  <div id="login-modal" class="modal hidden">
+    <div class="modal-content">
+      <h2>Account</h2>
+      <label>
+        Username<br>
+        <input type="text" id="username">
+      </label>
+      <label>
+        Password<br>
+        <input type="password" id="password">
+      </label>
+      <div class="modal-actions">
+        <button id="login-submit">Login</button>
+        <button id="signup-submit">Sign Me Up</button>
+      </div>
+      <button class="modal-close" id="modal-close">&times;</button>
+    </div>
+  </div>
 
+  <!-- SEARCH BAR -->
+  <div class="search-container">
+    <img src="public/icons/pungin2.png" alt="" class="search-icon">
+    <input type="text" placeholder="Search…">
+  </div>
+
+  <!-- HERO IMAGE -->
+  <section class="hero">
+    <img src="public/photos/Arctic.png" alt="Arctic Icebergs">
+  </section>
+
+  <!-- CONTACTS -->
+  <section class="contacts">
+    <h3>Contacts</h3>
+    <ul>
+      <li>Discord: your-server#1234</li>
+      <li>WhatsApp: +1 234 567 8901</li>
+      <li>Teams: ua-team@unitedarctic.com</li>
+      <li>Email: contact@unitedarctic.com</li>
+    </ul>
+  </section>
+
+  <!-- MORE TOPICS (14) -->
+  <section class="more-topics">
+    <h3>More Topics</h3>
+    <div class="topics-grid">
+      <!-- Repeat 14× -->
+      <div class="topic-item">
+        <div class="topic-logo"><!-- placeholder for your icon --></div>
+        <a href="more1.html">More Topic 1</a>
+      </div>
+      <!-- … up to More Topic 14 -->
+    </div>
+  </section>
+
+  <!-- SILLY IDEAS -->
+  <section class="silly-ideas">
+    <h3>Silly Ideas</h3>
+    <ul>
+      <li>Idea A: build an igloo-shaped web server</li>
+      <li>Idea B: host podcasts under ice</li>
+      <li>Idea C: code in thermal gloves</li>
+    </ul>
+  </section>
+
+  <!-- MESSAGE CAROUSEL -->
+  <section class="messages">
+    <h3>Messages from Agents</h3>
+    <div id="message-carousel" class="carousel"></div>
+    <form id="message-form">
+      <input type="text" placeholder="Send a message…" required>
+      <button type="submit">Send</button>
+    </form>
+  </section>
+
+  <!-- COMPLEX TOPICS -->
+  <section class="complex-topics">
+    <h3>Deep Dives</h3>
+    <div class="complex-grid">
+      <div class="complex-item">
+        <h4>Complex Topic 1</h4>
+        <p class="update-date">Updated: 2025-09-01</p>
+        <p>Short description…</p>
+      </div>
+      <div class="complex-item">
+        <h4>Complex Topic 2</h4>
+        <p class="update-date">Updated: 2025-08-20</p>
+        <p>Short description…</p>
+      </div>
+      <div class="complex-item">
+        <h4>Complex Topic 3</h4>
+        <p class="update-date">Updated: 2025-07-15</p>
+        <p>Short description…</p>
+      </div>
+      <div class="complex-item">
+        <h4>Complex Topic 4</h4>
+        <p class="update-date">Updated: 2025-06-30</p>
+        <p>Short description…</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
   <footer>
-    <p>© United Arctic Protogada — Codex Entry: Genesis</p>
+    <div class="site-info">
+      <p>United Arctic • Mythic learning portal</p>
+      <p>© 2025 United Arctic. All rights reserved.</p>
+    </div>
   </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
