@@ -1,229 +1,86 @@
-/* RESET & BASE */
+/* === UA Sanctum Stylebind === */
 
+/* Base Reset */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-body.light-mode {
-  background: #fafafa;
-  color: #111;
+html {
+  font-size: 16px;
+  font-family: 'Segoe UI', sans-serif;
 }
 
-body.dark-mode {
-  background: #111;
-  color: #eee;
+/* Light Mode */
+:root {
+  --bg-color: #f9f9f9;
+  --text-color: #1a1a1a;
+  --accent-color: #0077cc;
+  --border-color: #ddd;
 }
 
-/* HEADER */
-
-header {
-  display: flex;
-  align-items: center;
-  padding: 0.5rem 1rem;
-  background: inherit;
+/* Dark Mode */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg-color: #0f0f0f;
+    --text-color: #f0f0f0;
+    --accent-color: #66ccff;
+    --border-color: #333;
+  }
 }
 
-.logo-container .main-logo {
-  height: 40px;
+/* Body Styling */
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  padding: 2rem;
+  line-height: 1.6;
 }
 
-.mode-toggle {
-  margin-left: 1rem;
-  cursor: pointer;
+/* Headings */
+h1, h2, h3 {
+  color: var(--accent-color);
+  margin-bottom: 1rem;
 }
 
-.main-nav ul {
-  list-style: none;
-  display: flex;
-  gap: 1rem;
-  margin-left: 2rem;
-}
-
-.main-nav a {
+/* Links */
+a {
+  color: var(--accent-color);
   text-decoration: none;
-  color: inherit;
-  font-weight: 500;
+}
+a:hover {
+  text-decoration: underline;
 }
 
-.login-container {
-  margin-left: auto;
-}
-
-#login-btn {
-  background: transparent;
-  border: none;
-  font-size: 1rem;
-  cursor: pointer;
-  color: inherit;
-}
-
-/* MODAL */
-
-.modal {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0,0,0,0.5);
-  display: grid;
-  place-items: center;
-}
-
-.modal.hidden {
-  display: none;
-}
-
-.modal-content {
-  background: #fff;
-  padding: 1.5rem;
+/* Containers */
+.container {
+  max-width: 800px;
+  margin: auto;
+  border: 1px solid var(--border-color);
+  padding: 2rem;
   border-radius: 8px;
-  width: 300px;
-  position: relative;
+  background-color: rgba(255, 255, 255, 0.05);
 }
 
-body.dark-mode .modal-content {
-  background: #222;
-  color: #eee;
-}
-
-.modal-content label {
-  display: block;
-  margin-bottom: 0.75rem;
-  font-size: 0.9rem;
-}
-
-.modal-content input {
-  width: 100%;
-  padding: 0.4rem;
-  margin-top: 0.3rem;
-}
-
-.modal-actions {
-  display: flex;
-  gap: 0.5rem;
-  margin-top: 1rem;
-}
-
-.modal-actions button {
-  flex: 1;
-  padding: 0.5rem;
-  cursor: pointer;
-}
-
-.modal-close {
-  position: absolute;
-  top: 0.4rem;
-  right: 0.6rem;
-  background: transparent;
+/* Buttons */
+button {
+  background-color: var(--accent-color);
+  color: var(--bg-color);
   border: none;
-  font-size: 1.2rem;
-  cursor: pointer;
-}
-
-/* SEARCH */
-
-.search-container {
-  margin: 1rem;
-  display: flex;
-  align-items: center;
-  border: 1px solid #888;
+  padding: 0.75rem 1.5rem;
   border-radius: 4px;
-  overflow: hidden;
-}
-
-.search-container .search-icon {
-  width: 24px;
-  padding: 0.4rem;
-}
-
-.search-container input {
-  border: none;
-  flex: 1;
-  padding: 0.6rem;
-  font-size: 1rem;
-}
-
-/* HERO */
-
-.hero img {
-  width: 100%;
-  display: block;
-}
-
-/* SECTIONS */
-
-section {
-  padding: 1rem;
-}
-
-.contacts ul,
-.silly-ideas ul {
-  list-style: disc inside;
-  margin-top: 0.5rem;
-}
-
-.more-topics .topics-grid,
-.complex-topics .complex-grid {
-  display: grid;
-  gap: 1rem;
-}
-
-.more-topics .topics-grid {
-  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
-}
-
-.complex-topics .complex-grid {
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-}
-
-.topic-item,
-.complex-item {
-  border: 1px solid #888;
-  padding: 0.5rem;
-  border-radius: 4px;
-  background: inherit;
-}
-
-.topic-item a {
-  text-decoration: none;
-  color: inherit;
-  display: block;
-  margin-top: 0.4rem;
-  text-align: center;
-}
-
-/* MESSAGES */
-
-.messages .carousel {
-  min-height: 2.5rem;
-  padding: 0.5rem;
-  border: 1px solid #888;
-  margin-bottom: 0.5rem;
-}
-
-#message-form {
-  display: flex;
-  gap: 0.5rem;
-}
-
-#message-form input {
-  flex: 1;
-  padding: 0.5rem;
-}
-
-#message-form button {
-  padding: 0.5rem 1rem;
   cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+button:hover {
+  background-color: darken(var(--accent-color), 10%);
 }
 
-/* FOOTER */
-
+/* Footer */
 footer {
-  text-align: center;
-  padding: 1rem;
-  border-top: 1px solid #888;
   margin-top: 2rem;
+  text-align: center;
+  font-size: 0.875rem;
+  color: var(--border-color);
 }
